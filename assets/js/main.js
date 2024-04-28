@@ -274,33 +274,46 @@
 })();
 
 const name = document.getElementById("name");
-const form = document.getElementById("form");
 const email = document.getElementById("email");
 const subject = document.getElementById("subject");
 const message = document.getElementById("message");
 
-const namespan = document.getElementById("name-span");
-const messagespan = document.getElementById("message-span");
-const emailspan = document.getElementById("email-span");
-const subjectspan = document.getElementById("text-span");
+const namespan1 = document.getElementById("namespan");
+const espan = document.getElementById("espan");
+const sspan = document.getElementById("sspan");
+const mspan = document.getElementById("mspan");
 
+const form = document.getElementById("form");
+var validRegex =
+  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 form.addEventListener("submit", (e) => {
   if (
+    name.value === "" ||
     name.value == null ||
-    name.value === " " ||
     name.value >= 0 ||
     name.value <= 0
   ) {
     e.preventDefault();
-    namespan.innerHTML = "Name is Required";
+    namespan1.innerHTML = "name is required";
+  }
+  if (!email.value.match(validRegex)) {
+    e.preventDefault();
+    espan.innerHTML = "email is needed";
   } else {
-    namespan.innerHTML = "";
+    espan.innerHTML = "";
   }
 
-  if (email.value == null || email.value == "  ") {
+  if (subject.value === "") {
     e.preventDefault();
-    emailspan.innerHTML = "email is required";
+    sspan.innerHTML = "subject is required";
   } else {
-    emailspan.innerHTML = "";
+    sspan.innerHTML = "";
+  }
+
+  if (message.value === "") {
+    e.preventDefault();
+    mspan.innerHTML = "message is required";
+  } else {
+    span.innerHTML = "";
   }
 });

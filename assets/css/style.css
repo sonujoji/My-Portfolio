@@ -244,7 +244,22 @@ h6 {
   background: url("../img/sonu-portfolio.jpg") top center;
   background-size: cover;
 }
-
+@media (max-width: 1024px) {
+  #hero {
+    width: 100%;
+    height: 100vh;
+    background: url("../img/profile.png") top center;
+    background-size: cover;
+  }
+}
+@media (max-width: 576px) {
+  #hero {
+    width: 100%;
+    height: 100vh;
+    background: url("../img/sonu\ -respo.jpg") top center;
+    background-size: cover;
+  }
+}
 #hero:before {
   content: "";
   background: rgba(5, 13, 24, 0.3);
@@ -1019,7 +1034,9 @@ section {
 .contact .php-email-form button[type="submit"]:hover {
   background: #37b3ed;
 }
-
+.span {
+  color: red;
+}
 @keyframes animate-loading {
   0% {
     transform: rotate(0deg);

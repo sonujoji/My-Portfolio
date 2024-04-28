@@ -560,16 +560,20 @@
                 ></iframe>
               </div>
             </div>
-
             <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
               <form
-                id="form"
-                action="forms/contact.php"
-                method="post"
+                action="https://api.web3forms.com/submit"
+                method="POST"
                 role="form"
+                id="form"
                 class="php-email-form"
               >
                 <div class="row">
+                  <input
+                    type="hidden"
+                    name="access_key"
+                    value="7f1e3249-d2c5-4027-bb34-b42fe34ed15d"
+                  />
                   <div class="form-group col-md-6">
                     <label for="name">Your Name</label>
                     <input
@@ -578,17 +582,17 @@
                       class="form-control"
                       id="name"
                     />
-                    <span id="name-span" class="color"> </span>
+                    <span id="namespan" class="span"></span>
                   </div>
                   <div class="form-group col-md-6">
                     <label for="name">Your Email</label>
                     <input
-                      type="email"
+                      type="text"
                       class="form-control"
                       name="email"
                       id="email"
                     />
-                    <span id="email-span" class="color"> </span>
+                    <span id="espan" class="span"></span>
                   </div>
                 </div>
                 <div class="form-group">
@@ -599,25 +603,24 @@
                     name="subject"
                     id="subject"
                   />
-                  <span id="text-span" class="color"></span>
+                  <span id="sspan" class="span"></span>
                 </div>
                 <div class="form-group">
                   <label for="name">Message</label>
                   <textarea
-                    id="message"
                     class="form-control"
                     name="message"
                     rows="10"
+                    id="message"
                   ></textarea>
-                  <span id="message-span" class="color"></span>
+                  <span id="mspan" class="span"></span>
                 </div>
                 <div class="my-3">
-                  <div class="loading">Loading</div>
+                  <div class="loading"></div>
                   <div class="error-message"></div>
-                  <div class="sent-message">
-                    Your message has been sent. Thank you!
-                  </div>
+                  <div class="sent-message"></div>
                 </div>
+                <div class="h-captcha" data-captcha="true"></div>
                 <div class="text-center">
                   <button type="submit">Send Message</button>
                 </div>
